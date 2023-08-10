@@ -9,26 +9,46 @@ public class Qes1_13 {
 		 * ・単精度浮動小数点数型・倍精度浮動小数点数型
 		 * ・文字型・文字列型
 		 * ・ブーリアン型
+		 */
+		//byte型変数を定義
+		byte b;
+		//short型変数を定義
+		short s;
+		//int型変数を定義
+		int i1;
+		//long型変数を定義
+		long l;
+		//float型変数を定義
+		float f;
+		//double型変数を定義
+		double d;
+		//char型変数を定義
+		char c;
+		//String型変数を定義
+		String str;
+		//boolean型変数を定義
+		boolean bln;
+		/*
 		 * Q2 それぞれのローカル変数をローカル内でそれぞれの初期値を代入し初期化してください
 		 */
 		//byte型bの初期値を設定
-		byte b = 0;
+		b = 0;
 		//short型sの初期値を設定
-		short s = 0;
+		s = 0;
 		//int型i1の初期値を設定
-		int i1 = 0;
+		i1 = 0;
 		//long型lの初期値を設定
-		long l = 0L;
+		l = 0L;
 		//float型fの初期値を設定
-		float f = 0.0f;
+		f = 0.0f;
 		//double型dの初期値を設定
-		double d = 0.0d;
+		d = 0.0d;
 		//char型cの初期値を設定
-		char c = 0;
+		c = '\u0000';
 		//String型strの初期値を設定
-		String str = "";
+		str = null;
 		//boolean型blnの初期値を設定
-		boolean bln = false;
+		bln = false;
 		/*
 		 * Q3 初期化をしたそれぞれの変数に下記の値を代入してください
 		 * ・バイト型 10
@@ -134,7 +154,7 @@ public class Qes1_13 {
 		 * ただし計算は数値を直書きせず、全て変数を使ってすること
 		 */
 		//double型bmiの初期値を設定
-		double bmi = weight/ ((height/100)*(height/100));
+		double bmi = ((double)Math.round((weight/ ((height/100)*(height/100))) * 100))/100;
 		//コンソールに出力
 		System.out.println("BMIは"+bmi+"です");
 		//コンソールを1行空ける		
