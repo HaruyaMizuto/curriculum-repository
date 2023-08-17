@@ -1,7 +1,7 @@
 package curriculum_B;
-//java.util.Randomパッケージをインポート
+// java.util.Randomパッケージをインポート
 import java.util.Random;
-//java.util.Scannerパッケージをインポート
+// java.util.Scannerパッケージをインポート
 import java.util.Scanner;
 
 public class Ques6 {
@@ -32,64 +32,82 @@ public class Ques6 {
 		 * ディスプレイの残り台数は2台です
 		 * 『 その他商品 』は指定の商品ではありません
 		 */
-		//Scannerクラスのインスタンスを初期化
+		
+		// Scannerクラスのインスタンスを初期化
 		Scanner sc2 = new Scanner(System.in);
-		// product を宣言してsc2に入力された文字列を代入
+		//  製品名を宣言して入力された文字列を代入
 		String product = sc2.nextLine();
-		//productをカンマ区切りで分けてそれぞれを要素とした配列productsを宣言
+		// 製品名をカンマ区切りで分けてそれぞれを要素とした配列を宣言
 		String[] products = product.split("、");
-		//Randomクラスのインスタンスを初期化
+		// Randomクラスのインスタンスを初期化
 		Random random = new Random();
-		//numを宣言
+		// 残り台数の変数を宣言
 		int num = 0;
-		//num2を宣言してランダムに出た数字をnum2に代入する
-		int num2 = random.nextInt(11);
-		//配列productsの要素それぞれをproductNameに代入して繰り返し処理
+		// 残り台数の変数を宣言してランダムに出た数字を代入する
+		int num2 = random.nextInt(12);
+		
+		// 配列の要素それぞれ繰り返し処理
 		for (String productName : products) {
-			//numに0～11でランダムに出た数字を代入
-			num = random.nextInt(11);
-			//productNameの値によって処理を変える
+			
+			// 残り台数を0～11でランダムに出た数字を代入
+			num = random.nextInt(12);
+			// 製品によって処理を変える
+			
 			switch (productName) {
-			//productNameがパソコンのとき
+			
+			// パソコンのとき
 			case"パソコン":
-				//コンソールに出力
+				
+				// コンソールに出力
 				System.out.println("パソコンの残り台数は" + num + "台です");
 				break;
-			//冷蔵庫のとき
+				
+			// 冷蔵庫のとき
 			case"冷蔵庫":
-				//コンソールに出力
+				
+				// コンソールに出力
 				System.out.println("冷蔵庫の残り台数は" + num + "台です");
 				break;
-			//扇風機のとき
+				
+			// 扇風機のとき
 			case"扇風機":
-				//コンソールに出力
+				
+				// コンソールに出力
 				System.out.println("扇風機の残り台数は" + num + "台です");
 				break;
-			//洗濯機のとき
+				
+			// 洗濯機のとき
 			case"洗濯機":
-				//コンソールに出力
+				
+				// コンソールに出力
 				System.out.println("洗濯機の残り台数は" + num + "台です");
 				break;
-			//加湿器のとき
+				
+			// 加湿器のとき
 			case"加湿器":
-				//コンソールに出力
+				
+				// コンソールに出力
 				System.out.println("加湿器の残り台数は" + num + "台です");
 				break;
-			//テレビ、ディスプレイのとき
+				
+			// テレビ、ディスプレイのとき
 			case"テレビ":
 			case"ディスプレイ":
-				//テレビのときはnum2を、ディスプレイのときは11からnum2を引いた数字を残り台数として文字列を決定
+				
+				// テレビのときは残り台数をそのまま、ディスプレイのときは11から残り台数を引いた数字を残り台数として文字列を決定
 				String result = productName.equals("テレビ") ? "テレビの残り台数は" + num2 + "台です" : "ディスプレイの残り台数は" + (11 - num2) + "台です"; 
-				//コンソールに出力
+				// コンソールに出力
 				System.out.println(result);
 				break;
-			//それら以外のとき
+				
+			// それら以外のとき
 			default:
-				//コンソールに出力
+				
+				// コンソールに出力
 				System.out.println("『 " + productName +" 』は指定の商品ではありません");
 				break;
 			}
-			//コンソールを改行
+			// コンソールを改行
 			System.out.println("");
 		}
 	}

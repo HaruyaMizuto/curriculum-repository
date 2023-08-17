@@ -6,17 +6,17 @@ public class Ques4 {
 		/*
 		 * Q4 for文を使って見本の通りに出力してください
 		 */
-		//int型iを1から9の範囲として繰り返し処理
+		// int型を1から9の範囲として繰り返し処理
 		for (int i = 1; i < 10; i++) {
-			//String型line1を定義
-			String line1 = "";
-			//int型kを1から9の範囲として繰り返し処理
-			for (int k = 1; k < 10; k++) {
-				//line1に2桁で0埋めした、iとkの積を求める式を自己代入していく
-				line1 += (String.format("%02d", i) + " * " + String.format("%02d", k) + " = " + String.format("%02d",i * k) + " || ");
+			
+			// int型を1から9の範囲で繰り返し処理
+			for (int j = 1; j < 10; j++) {
+				
+				// コンソールに出力
+				System.out.printf("%02d * %02d = %02d", i, j, i * j);
+				// コンソールに出力
+				System.out.print(j < 9 ? " || " : "\n");
 			}
-			//line1をコンソールに出力
-			System.out.println(line1);
 		}
 	}
 }

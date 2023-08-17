@@ -1,9 +1,9 @@
 package curriculum_B;
-//java.math.BigDecimalパッケージをインポート
+// java.math.BigDecimalパッケージをインポート
 import java.math.BigDecimal;
-//java.math.RoundingModeパッケージをインポート
+// java.math.RoundingModeパッケージをインポート
 import java.math.RoundingMode;
-//java.util.Scannerパッケージをインポート
+// java.util.Scannerパッケージをインポート
 import java.util.Scanner;
 
 public class Ques7 {
@@ -37,83 +37,115 @@ public class Ques7 {
 		 * 社会の平均点は10.00点です。
 		 * 全体の平均点は10.00点です。
 		 */
-		//Scannerクラスのインスタンスを初期化
+		// Scannerクラスのインスタンスを初期化
 		Scanner sc2 = new Scanner(System.in);
-		//s,sub,score,studentNumを宣言し初期化
-		int s,sub,score,studentNum = 0;
-		//配列subjectを宣言し、英語,数学,理科,社会を格納
+		// 変数を宣言
+		int s = 0;
+		// 変数を宣言
+		int sub = 0;
+		// 変数を宣言
+		int score = 0;
+		// 生徒数を宣言
+		int studentNum = 0;
+		// 配列を宣言し、英語,数学,理科,社会を格納
 		String [] subject = {"英語", "数学", "理科", "社会"};
-		//コンソールに出力
+		// コンソールに出力
 		System.out.print("生徒の人数を入力してください（2以上）: ");
-		//studentNumに入力された値を代入
+		// 生徒数に入力された値を代入
 		studentNum = sc2.nextInt();
-		//多次元配列scoresを宣言し、行がstudentNum,列が4の空配列を初期値に設定
+		// 多次元配列を宣言し、行が生徒数,列が4の空配列を初期値に設定
 		double [][] scores = new double[studentNum][4];
-		double allSum = 0;
-		//1人目からstudentNum人目まで繰り返し処理
+		
+		// 生徒数の分を繰り返し処理
 		for (s = 1; s <= studentNum; s++) {
-			//4つの教科に対して繰り返し処理
+			
+			// 4つの教科に対して繰り返し処理
 			for (sub = 0; sub < 4; sub++) {
-				//コンソールに出力
+				
+				// コンソールに出力
 				System.out.print(s + "人目の『"+ subject[sub] + "』の点数を入力してください :");
-				//scoreに入力された値を代入
+				// 点数に入力された値を代入
 				score = sc2.nextInt();
-				//scoreを多次元配列scoresに格納
+				// 点数を多次元配列に格納
 				scores[s-1][sub] = score;
 			}
-			//コンソールを改行
+			
+			// コンソールを改行
 			System.out.println("");
 		}
-		//studentSum,subjectSum,avarageを宣言
-		double studentSum,subjectSum,avarage;
-		//生徒ごとの平均点を出力する記述
-		//1人目からstudentNum人目まで繰り返し処理
+		
+		// 変数を宣言
+		double studentSum;
+		// 変数を宣言
+		double subjectSum;
+		// 変数を宣言し初期化
+		double allSum = 0;
+		// 変数を宣言
+		double studentAverage;
+		// 変数を宣言
+		double subjectAverage;
+		// 変数を宣言
+		double average;
+		
+		// 生徒ごとの平均点を出力する記述
+		// 1人目からstudentNum人目まで繰り返し処理
 		for (s = 1; s <= studentNum; s++) {
-			//studentSumを初期化
+			
+			// studentSumを初期化
 			studentSum = 0;
-			//4つの教科で繰り返し処理
+			
+			// 4つの教科で繰り返し処理
 			for (sub =0; sub < 4; sub++) {
-				//studentSumにscore[s-1][sub]を足していく
+				
+				// studentSumにscore[s-1][sub]を足していく
 				studentSum = studentSum + scores[s-1][sub];
 			}
-			//avarageに値を代入
-			avarage = studentSum / 4;
-			//BigDecimalクラスavrをインスタンス化
-			BigDecimal avr = new BigDecimal(avarage);
-			//avrを小数点第2位までで丸め処理してresultに代入
+			
+			// avarageに値を代入
+			studentAverage = studentSum / 4;
+			// BigDecimalクラスavrをインスタンス化
+			BigDecimal avr = new BigDecimal(studentAverage);
+			// avrを小数点第2位までで丸め処理してresultに代入
 			BigDecimal result = avr.setScale(2, RoundingMode.HALF_UP);
-			//コンソールに出力
+			// コンソールに出力
 			System.out.println(s + "人目の平均点は" + result + "点です");
 			allSum = allSum + studentSum;
 		}
-		//コンソールを改行
+		
+		// コンソールを改行
 		System.out.println("");
-		//全体での教科ごとの平均点を出力する記述
-		//4つの教科で繰り返し処理
+		
+		// 全体での教科ごとの平均点を出力する記述
+		// 4つの教科で繰り返し処理
 		for (sub =0; sub < 4; sub++) {
-			//subjectSumを初期化
+			
+			// subjectSumを初期化
 			subjectSum = 0;
-			//1人目からstudentNum人目まで繰り返し処理
+			
+			// 1人目からstudentNum人目まで繰り返し処理
 			for (s =1; s <= studentNum; s++) {
-				//subjectSumにscores[s-1][sub]を足していく
+				
+				// subjectSumにscores[s-1][sub]を足していく
 				subjectSum = subjectSum + scores[s-1][sub];
 			}
-			//avarageに値を代入
-			avarage = subjectSum / studentNum;
-			//BigDecimalクラスavrをインスタンス化
-			BigDecimal avr = new BigDecimal(avarage);
-			//avrを小数点第2位までで丸め処理してresultに代入
+			
+			// avarageに値を代入
+			subjectAverage = subjectSum / studentNum;
+			// BigDecimalクラスavrをインスタンス化
+			BigDecimal avr = new BigDecimal(subjectAverage);
+			// avrを小数点第2位までで丸め処理してresultに代入
 			BigDecimal result = avr.setScale(2, RoundingMode.HALF_UP);
-			//コンソールに出力
+			// コンソールに出力
 			System.out.println(subject[sub] + "の平均点は" + result +  "点です");
 		}
-		//avarageに値を代入
-		avarage = allSum / (4 * studentNum);
-		//BigDecimalクラスavrをインスタンス化
-		BigDecimal avr = new BigDecimal(avarage);
-		//avrを小数点第2位までで丸め処理してresultに代入
+		
+		// avarageに値を代入
+		average = allSum / (4 * studentNum);
+		// BigDecimalクラスavrをインスタンス化
+		BigDecimal avr = new BigDecimal(average);
+		// avrを小数点第2位までで丸め処理してresultに代入
 		BigDecimal result = avr.setScale(2, RoundingMode.HALF_UP);
-		//コンソールに出力
+		// コンソールに出力
 		System.out.println("全体の平均点は" + result +  "点です");
 	}
 
