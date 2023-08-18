@@ -1,5 +1,5 @@
 package curriculum_B;
-//　java.util.Objectsパッケージをインポート
+// java.util.Objectsパッケージをインポート
 import java.util.Objects;
 // java.util.Randomパッケージをインポート
 import java.util.Random;
@@ -33,7 +33,7 @@ public class Ques1_3 {
 		do {
 			// ユーザー名を取得
 			name = sc1.nextLine();
-			// 半角英数字のパターンを作成
+			// 半角英数字のパターンを作成し一致しているか判断
 			Matcher p = Pattern.compile("^[A-Za-z0-9]*$").matcher(name);
 			
 			// それ以外でユーザー名の文字数が0文字以下もしくはnullの場合
