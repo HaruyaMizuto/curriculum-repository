@@ -1,9 +1,14 @@
 package curriculum_B;
+//　java.util.Objectsパッケージをインポート
 import java.util.Objects;
 // java.util.Randomパッケージをインポート
 import java.util.Random;
 // java.util.Scannerパッケージをインポート
 import java.util.Scanner;
+// java.util.regex.Matcherパッケージをインポート
+import java.util.regex.Matcher;
+// java.util.regex.Patternパッケージをインポート
+import java.util.regex.Pattern;
 
 public class Ques1_3 {
 	
@@ -28,6 +33,8 @@ public class Ques1_3 {
 		do {
 			// ユーザー名を取得
 			name = sc1.nextLine();
+			// 半角英数字のパターンを作成
+			Matcher p = Pattern.compile("^[A-Za-z0-9]*$").matcher(name);
 			
 			// それ以外でユーザー名の文字数が0文字以下もしくはnullの場合
 			if (Objects.isNull(name) || name.length() <= 0) {
@@ -42,7 +49,7 @@ public class Ques1_3 {
 				System.out.println("名前を入力してください\n");
 				
 			// 半角英数字でないとき
-			}else if (name.matches("[^A-Za-z0-9]+$")) {
+			}else if (!(p.find())) {
 				
 				// コンソールに出力
 				System.out.println("半角英数字のみで名前を入力してください\n");
