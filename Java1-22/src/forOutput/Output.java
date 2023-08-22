@@ -17,10 +17,10 @@ public class Output {
 	// コンストラクタ
 	public Output(String country,String food){
 		// 変数に代入
-		this.food = country;
+		this.country = country;
 		
 		// 変数に代入
-		this.country = food;
+		this.food = food;
 		
 		// 現在日時を取得
 		LocalDateTime nowDate = LocalDateTime.now();

@@ -8,7 +8,7 @@ import forOutput.Output;
 public class Main {
 	public static void main(String[] args) {
 		// Outputクラスのインスタンスを初期化
-		Output o = new Output("", "");
+		Output o = new Output("日本", "寿司");
 		
 		// nullチェック
 		if(Objects.nonNull(o)) {
