@@ -60,7 +60,7 @@ public class Main {
 		sc.close();
 		
 		// nullチェック
-		if (Objects.nonNull(sample)) {
+		if (Objects.nonNull(sample) && sample.length() > 0) {
 			
 			// Animalクラスのインスタンスを初期化
 			Output o = new Output(sample);
@@ -76,7 +76,7 @@ public class Main {
 			}
 		}else {
 			// エラー文を表示
-			System.out.println("エラー：入力された値がnullです");
+			System.out.println("エラー：入力された値がnullまたは未入力です");
 		}
 	}
 
