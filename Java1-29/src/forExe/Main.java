@@ -55,7 +55,7 @@ public class Main {
 		sc.close();
 		
 		// nullチェック
-		if(Objects.nonNull(sort) && Objects.nonNull(inputNums)) {
+		if(Objects.nonNull(sort) && Objects.nonNull(inputNums) && inputNums.length() > 0 && sort.length() > 0) {
 			
 			// Outputクラスのインスタンスを初期化
 			Output o = new Output(inputNums, sort);
@@ -66,7 +66,7 @@ public class Main {
 		}else {
 			
 			// エラー文を表示
-			System.out.println("エラー：入力された値がnullです");
+			System.out.println("エラー：nullまたは未入力の項目があります");
 		}
 	}
 
