@@ -8,5 +8,8 @@ class Main {
 		System.out.println(person1.name);
 		System.out.println(person1.age);
 		System.out.println(person1.height);
+		
+		// 問9、問10のメソッドの呼び出し
+		person1.print();
 	}
 }
