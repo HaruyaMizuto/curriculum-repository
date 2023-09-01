@@ -1,5 +1,8 @@
 package main;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 class Person{
 	/* 問題1：インスタンスフィールドを定義してください
 	 * 問題4：インスタンスフィールド「weight」を定義し、コンストラクタの中で値をセットしてください（double型）
@@ -32,7 +35,6 @@ class Person{
 	 * 問題7：bmiメソッドでインスタンスのBMIを返すようにしてください
 	 */
 	public double bmi() {
-		
 		return weight / (height * height);
 	}
 	
@@ -42,10 +44,11 @@ class Person{
 	 * 問題10：人数の合計を「合計○人です」と出力してください。
 	 */
 	public void print() {
+		BigDecimal bd = new BigDecimal(this.bmi());
 		
 		System.out.println("名前は" + this.name + "です");
 		System.out.println("年は" + this.age + "です");
-		System.out.println("BMIは" + this.bmi() + "です");
+		System.out.println("BMIは" + bd.setScale(2, RoundingMode.HALF_UP) + "です");
 		System.out.println("合計"+ this.count +"人です");
 	}
 }
